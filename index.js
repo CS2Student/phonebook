@@ -10,6 +10,8 @@ app.use(bodyParser.json())
 const cors = require('cors')
 app.use(cors())
 
+app.use(express.static('dist'))
+
 // Define a custom token for JSON.stringify of the response body
 morgan.token('response-json', (req, res) => {
     return JSON.stringify(req.body)
